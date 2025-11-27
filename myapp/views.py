@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from datetime import datetime,timedelta
 
-# Create your views here.
+
+def home(request):
+   return  render(request, 'home.html')
+
