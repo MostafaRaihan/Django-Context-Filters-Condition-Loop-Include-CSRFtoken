@@ -31,6 +31,43 @@ def home(request):
         {"name" : "Reven"},
     ]
 
+    isLogin = True
+
+    products = [
+        {
+            'id': 1,
+            'name': 'Laptop',
+            'price': 75000,
+            'stock': 10
+        },
+        {
+            'id': 2,
+            'name': 'Smartphone',
+            'price': 25000,
+            'stock': 20
+        },
+        {
+            'id': 3,
+            'name': 'Headphones',
+            'price': 1500,
+            'stock': 50
+        },
+        {
+            'id': 4,
+            'name': 'Keyboard',
+            'price': 1200,
+            'stock': 15
+        },
+        {
+            'id': 5,
+            'name': 'Smart Watch',
+            'price': 3500,
+            'stock': 8
+        }
+    ]
+
+
+
     context = {
         "nam1": nam1,
         "nam2": nam2,
@@ -52,6 +89,10 @@ def home(request):
         "isBangladeshi": isBangladeshi,
 
         "myclass": myclass,
+
+        "isLogin": isLogin,
+
+        "products": products,
     }
 
     return render(request, 'home.html', context)

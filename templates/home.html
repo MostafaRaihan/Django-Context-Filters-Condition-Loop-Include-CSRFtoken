@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
     <title>Django-Context-Filters-Condition-Loop-Tags</title>
 </head>
-<body>
-    <br>
+<body style="margin: 100px">
     <h3>Django-Context-Filters-Condition-Loop-Tags</h3>
     <hr>
     <h3>Template Contexts</h3>
@@ -56,6 +55,45 @@
     <br>
 
     <h3>Dictionary Filters</h3>
-    <h4></h4>
+    <h4>My Class- {{ myclass }}</h4>
+    <h4>My Class Dict Sort- {{ myclass | dictsort:"name"}}</h4>
+    <h4>My Class Dict Revers Sort- {{ myclass | dictsortreversed:"name" }}</h4>
+    <h4>My Class Join- {{ myclass | join:"," }}</h4>
+    <br>
+
+    <h3>If-Else Statement</h3>
+    <p>{%  if isLogin %}
+        <button>Logout</button>
+    {% else %}
+        <button>Login</button>
+    {% endif %}</p>
+    <br>
+
+    <h3>Loops</h3>
+    <table border="1" style="text-align: center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for p in products %}
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.price }}</td>
+                <td>{{ p.stock }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% comment %}
+    this is comment
+    {% endcomment %}
 </body>
 </html>
